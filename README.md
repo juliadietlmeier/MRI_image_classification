@@ -1,7 +1,10 @@
 # MRI_image_classification
+Keras implementation of the normalized spatial attention paper
 
 Cheng et al. dataset [1] can be downloaded from:
 https://figshare.com/articles/brain_tumor_dataset/1512427
+
+Tested in Python 3.9.12, Tensorflow 2.9.1 and Keras 2.9.0
 
 # References:
 
