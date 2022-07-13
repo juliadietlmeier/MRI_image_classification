@@ -33,17 +33,14 @@ from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten,Dense, Dropout
 
 tf.keras.backend.clear_session()
         
-IMAGE_SIZE = [256, 256]
 batch_size=64
 
 acc_array=[]
 for k in range(10):
     
-    train_datagen = ImageDataGenerator()
+    train_datagen = ImageDataGenerator(rescale=1/255)
 
-    test_datagen = ImageDataGenerator()
-
-    validation_datagen = ImageDataGenerator()
+    validation_datagen = ImageDataGenerator(rescale=1/255)
                                         
     train_generator = train_datagen.flow_from_directory(
             '.../mri_t1_classification_dataset2/train/',  
@@ -61,21 +58,10 @@ for k in range(10):
             class_mode='sparse',
             shuffle=False)
 
-    test_generator = test_datagen.flow_from_directory(
-            '.../mri_t1_classification_dataset2/',
-            classes=['test'],
-            target_size=(256, 256),
-            color_mode="rgb",
-            batch_size=32,
-            shuffle=False)
-    test_generator.reset()
-
     from models.AlexNet import model_AlexNet()
     #from models.proposed_ANSA import model_ANSA
 
-
-
-#"=== COMPILE =================================================================="
+#=== COMPILE ==================================================================
 
     opt1 = tf.keras.optimizers.SGD(lr=0.0001, momentum=0.9, clipnorm=1.)
     opt2 = tf.keras.optimizers.RMSprop(lr=0.001)
@@ -85,7 +71,7 @@ for k in range(10):
                   optimizer=opt4,
                   metrics=['accuracy'])
 
-#"=== TRAINING ================================================================="
+#=== TRAINING =================================================================
 
     class_weights = {0: 1.4461315979754157,
                      1: 0.7183908045977011,
