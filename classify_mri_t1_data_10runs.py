@@ -71,10 +71,7 @@ for k in range(10):
     test_generator.reset()
 
     from models.AlexNet import model_AlexNet()
-    #model=model_2020()
-    model=model_AlexNet()
-    #model = model_AN() # Proposed 
-    #model=model_S()#VGG16*
+    #from models.proposed_ANSA import model_ANSA
 
 
 
