@@ -39,11 +39,11 @@ batch_size=64
 acc_array=[]
 for k in range(10):
     
-    train_datagen = ImageDataGenerator(rescale=1/255)
+    train_datagen = ImageDataGenerator()
 
-    test_datagen = ImageDataGenerator(rescale=1/255)
+    test_datagen = ImageDataGenerator()
 
-    validation_datagen = ImageDataGenerator(rescale=1/255)
+    validation_datagen = ImageDataGenerator()
                                         
     train_generator = train_datagen.flow_from_directory(
             '.../mri_t1_classification_dataset2/train/',  
