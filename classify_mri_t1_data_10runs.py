@@ -2,7 +2,7 @@
 """
 Created on Wed July 13 13:53:48 2022
 
-@author: jdiet_000
+@author: dietlmj
 """
 from __future__ import absolute_import
 
