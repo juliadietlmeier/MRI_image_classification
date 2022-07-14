@@ -84,7 +84,7 @@ for k in range(10):
 
     history = model.fit(train_generator,
                         steps_per_epoch=(2145)//64,
-                        epochs=50,
+                        epochs=50, # 150 epochs for model_2020()
                         verbose=1,
                         validation_data = validation_generator,
                         validation_steps=306//32, callbacks=[lr_reduce, model_checkpoint, es], class_weight=class_weights)
