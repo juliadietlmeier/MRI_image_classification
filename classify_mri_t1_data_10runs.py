@@ -92,7 +92,7 @@ for k in range(10):
      
     model.load_weights('model_classification.hdf5')
 
-    txtfile_write = ".../predictedclass_joint.txt"
+    txtfile_write = ".../predictedclass.txt"
     test_dir      = ".../mri_t1_classification_dataset2/test/"
     txt_file_test = ".../mri_t1_classification_dataset2/test_labels.txt"
     f=open(txtfile_write, "w")
