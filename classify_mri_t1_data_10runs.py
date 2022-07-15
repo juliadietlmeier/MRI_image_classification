@@ -36,7 +36,7 @@ tf.keras.backend.clear_session()
 batch_size=64
 
 acc_array=[]
-for k in range(10):
+for k in range(20):
     
     train_datagen = ImageDataGenerator(rescale=1/255)
 
